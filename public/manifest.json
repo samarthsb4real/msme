@@ -1,5 +1,4 @@
 {
-  "id": "/",
   "name": "MSME Service Assistant",
   "short_name": "MSME Assistant",
   "description": "Comprehensive MSME service assistant for Indian entrepreneurs and businesses",
@@ -11,32 +10,23 @@
   "categories": ["business", "finance", "productivity"],
   "lang": "en-US",
   "dir": "ltr",
-  "scope": "/",
-  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
-  "related_applications": [
-    {
-      "platform": "web",
-      "url": "https://msme-sit.vercel.app/"
-    }
-  ],
-  "prefer_related_applications": false,
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "/icon.svg",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/icon-512.png",
+      "src": "/icon.svg",
       "sizes": "512x512", 
-      "type": "image/png",
+      "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
       "purpose": "maskable"
     }
   ],
@@ -46,55 +36,23 @@
       "short_name": "Chat",
       "description": "Open MSME Chat Assistant",
       "url": "/",
-      "icons": [{ "src": "/api/icon?size=96", "sizes": "96x96", "type": "image/svg+xml" }]
+      "icons": [{ "src": "/icon.svg", "sizes": "96x96", "type": "image/svg+xml" }]
     },
     {
       "name": "Resources",
       "short_name": "Resources", 
       "description": "MSME Resources and Tools",
       "url": "/resources",
-      "icons": [{ "src": "/api/icon?size=96", "sizes": "96x96", "type": "image/svg+xml" }]
-    },
-    {
-      "name": "Calculators",
-      "short_name": "Calc",
-      "description": "Financial Calculators",
-      "url": "/resources#calculators",
-      "icons": [{ "src": "/api/icon?size=96", "sizes": "96x96", "type": "image/svg+xml" }]
+      "icons": [{ "src": "/icon.svg", "sizes": "96x96", "type": "image/svg+xml" }]
     }
   ],
   "screenshots": [
     {
       "src": "https://msme-sit.vercel.app/api/og?title=MSME%20Chat%20Interface",
       "sizes": "1280x720",
-      "type": "image/png",
+      "type": "image/svg+xml",
       "form_factor": "wide",
       "label": "MSME Assistant Chat Interface"
-    },
-    {
-      "src": "https://msme-sit.vercel.app/api/og?title=Mobile%20Interface",
-      "sizes": "390x844",
-      "type": "image/png", 
-      "form_factor": "narrow",
-      "label": "MSME Assistant Mobile View"
-    }
-  ],
-  "file_handlers": [
-    {
-      "action": "/",
-      "accept": {
-        "text/plain": [".txt"],
-        "text/csv": [".csv"]
-      }
-    }
-  ],
-  "launch_handler": {
-    "client_mode": "focus-existing"
-  },
-  "protocol_handlers": [
-    {
-      "protocol": "web+msme",
-      "url": "/?handler=%s"
     }
   ]
 }
