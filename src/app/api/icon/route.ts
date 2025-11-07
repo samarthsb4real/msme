@@ -6,7 +6,7 @@ export async function GET(request: NextRequest) {
     const size = searchParams.get('size') || '192'
     const sizeNum = parseInt(size)
     
-    // Create SVG that will be converted to PNG
+    // Create SVG that can be converted to PNG by the browser
     const svg = `
       <svg width="${sizeNum}" height="${sizeNum}" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -15,11 +15,17 @@ export async function GET(request: NextRequest) {
             <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
           </linearGradient>
         </defs>
-        <rect width="${sizeNum}" height="${sizeNum}" rx="${sizeNum * 0.1}" fill="url(#grad1)"/>
-        <text x="${sizeNum/2}" y="${sizeNum/2 + sizeNum*0.1}" font-family="Arial, sans-serif" font-size="${sizeNum*0.4}" fill="white" text-anchor="middle" font-weight="bold">🏢</text>
+        <rect width="${sizeNum}" height="${sizeNum}" rx="${sizeNum * 0.15}" fill="url(#grad1)"/>
+        <g transform="translate(${sizeNum/2}, ${sizeNum/2})">
+          <rect x="${-sizeNum*0.25}" y="${-sizeNum*0.25}" width="${sizeNum*0.5}" height="${sizeNum*0.5}" rx="${sizeNum*0.05}" fill="white" opacity="0.2"/>
+          <text x="0" y="${sizeNum*0.1}" font-family="Arial, sans-serif" font-size="${sizeNum*0.3}" fill="white" text-anchor="middle" font-weight="bold">M</text>
+        </g>
       </svg>
     `
 
+    // For PNG conversion, we'll use a data URL approach
+    const canvas = `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`
+    
     return new Response(svg, {
       headers: {
         'Content-Type': 'image/svg+xml',
