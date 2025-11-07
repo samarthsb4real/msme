@@ -1,13 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MSME Service Assistant
 
-## Getting Started
+A comprehensive, AI-powered web application built with Next.js and Google's Gemini AI to assist with Micro, Small, and Medium Enterprise (MSME) related queries and guidance.
 
-First, run the development server:
+## 🚀 Features
+
+- 🤖 **AI-Powered Chatbot**: Real-time assistance using Google's Gemini AI
+- 📱 **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
+- 🎨 **Modern UI**: Built with shadcn/ui components and Tailwind CSS
+- 📄 **Multi-Page Application**: Complete website with navigation
+- ⚡ **Fast Performance**: Powered by Next.js 16 with Turbopack
+- 🔒 **Secure**: Environment-based API key management
+
+## 🎯 MSME Expertise
+
+Our AI assistant specializes in:
+- **Registration**: Udyam Registration, GST setup, business licenses
+- **Financial Support**: MUDRA loans, Stand-Up India, SIDBI schemes
+- **Compliance**: Labor laws, environmental clearances, tax filing
+- **Growth Programs**: Technology upgradation, export assistance
+- **Government Schemes**: Subsidies, incentives, and support programs
+
+## 📋 Prerequisites
+
+1. **Node.js** (v18 or higher)
+2. **Gemini API Key** from [Google AI Studio](https://makersuite.google.com/app/apikey)
+
+## 🛠️ Quick Start
+
+1. **Clone and install dependencies**:
+```bash
+npm install
+```
+
+2. **Set up environment variables**:
+   - Copy `.env.local` and add your Gemini API key:
+   ```bash
+   GEMINI_API_KEY=your_actual_api_key_here
+   ```
+
+3. **Start the development server**:
 
 ```bash
 npm run dev
-# or
-yarn dev
 # or
 pnpm dev
 # or

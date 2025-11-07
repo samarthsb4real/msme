@@ -1,0 +1,193 @@
+# MSME Loan Application Template
+
+## SECTION A: BUSINESS INFORMATION
+
+**Business Name:** ________________________________
+**Legal Structure:** □ Sole Proprietorship □ Partnership □ Private Limited □ LLP
+**Date of Establishment:** ____________________
+**Udyam Registration Number:** ____________________
+**GST Number:** ____________________
+**PAN Number:** ____________________
+
+**Registered Address:**
+_________________________________________________________________
+_________________________________________________________________
+Pin Code: _____________ State: _________________
+
+**Business Address (if different):**
+_________________________________________________________________
+_________________________________________________________________
+Pin Code: _____________ State: _________________
+
+**Nature of Business:**
+□ Manufacturing □ Trading □ Service □ Other: _______________
+
+**Business Activity Description:**
+_________________________________________________________________
+_________________________________________________________________
+
+## SECTION B: PROMOTER/DIRECTOR INFORMATION
+
+### Primary Applicant
+**Name:** ________________________________
+**Age:** _______ **Gender:** □ Male □ Female □ Other
+**Father's/Spouse Name:** ________________________________
+**Educational Qualification:** ________________________________
+**Experience in Business:** _______ years
+**Contact Number:** ____________________
+**Email:** ____________________
+**Aadhaar Number:** ____________________
+**PAN Number:** ____________________
+
+**Residential Address:**
+_________________________________________________________________
+_________________________________________________________________
+
+### Additional Promoters/Directors (if applicable)
+**Name:** ________________________________
+**Relationship:** ________________________________
+**Shareholding %:** _______
+**Contact Number:** ____________________
+
+## SECTION C: FINANCIAL INFORMATION
+
+### Current Business Financials (Latest Year)
+**Annual Turnover:** ₹ ____________________
+**Net Profit:** ₹ ____________________
+**Total Assets:** ₹ ____________________
+**Total Liabilities:** ₹ ____________________
+
+### Banking Details
+**Primary Bank:** ________________________________
+**Account Number:** ____________________
+**Account Type:** □ Current □ Savings □ CC/OD
+**Average Monthly Balance:** ₹ ____________________
+**Relationship Period:** _______ years
+
+**Other Bank Relationships:**
+Bank 1: _________________ Account Type: _________
+Bank 2: _________________ Account Type: _________
+
+### Existing Loans/Credit Facilities
+**Total Outstanding Amount:** ₹ ____________________
+**Monthly EMI Burden:** ₹ ____________________
+
+**Loan Details:**
+Lender 1: _________________ Outstanding: ₹ _________
+Lender 2: _________________ Outstanding: ₹ _________
+
+## SECTION D: LOAN REQUIREMENTS
+
+**Loan Amount Required:** ₹ ____________________
+**Purpose of Loan:**
+□ Working Capital □ Machinery Purchase □ Business Expansion
+□ Raw Material □ Infrastructure □ Other: _______________
+
+**Detailed Purpose:**
+_________________________________________________________________
+_________________________________________________________________
+
+**Preferred Tenure:** _______ years
+**Preferred EMI:** ₹ ____________________
+
+### Security Offered
+□ Property Mortgage
+□ Fixed Deposit
+□ Equipment Hypothecation
+□ Personal Guarantee
+□ Third Party Guarantee
+□ Collateral-free (under guarantee schemes)
+
+**Security Details:**
+_________________________________________________________________
+_________________________________________________________________
+
+## SECTION E: PROJECT DETAILS (For New Projects)
+
+**Project Cost:** ₹ ____________________
+**Margin/Equity:** ₹ ____________________
+**Expected Revenue (Year 1):** ₹ ____________________
+**Break-even Period:** _______ months
+
+**Market Analysis:**
+_________________________________________________________________
+_________________________________________________________________
+
+**Competition Analysis:**
+_________________________________________________________________
+_________________________________________________________________
+
+## SECTION F: EMPLOYMENT DETAILS
+
+**Current Employment:** _______ persons
+**Additional Employment (Post Loan):** _______ persons
+**Skilled Workers:** _______
+**Unskilled Workers:** _______
+
+## SECTION G: DOCUMENTS CHECKLIST
+
+### Identity Documents
+□ Aadhaar Card (All partners/directors)
+□ PAN Card (All partners/directors)
+□ Recent photographs
+
+### Business Documents
+□ Udyam Registration Certificate
+□ Partnership Deed/MOA/AOA
+□ GST Registration Certificate
+□ Trade License
+□ Shop & Establishment License
+
+### Financial Documents
+□ Audited Financial Statements (3 years)
+□ IT Returns (3 years)
+□ Bank Statements (12 months)
+□ GST Returns (12 months)
+□ Projected Financial Statements
+
+### Security Documents
+□ Property Documents (if applicable)
+□ Insurance Policies
+□ Valuation Certificate
+□ NOC from Co-owners
+
+### Other Documents
+□ Project Report
+□ Quotations for Machinery/Equipment
+□ Order Copies/Work Contracts
+□ Environmental Clearance (if required)
+
+## SECTION H: DECLARATIONS
+
+I/We hereby declare that:
+
+1. All information provided is true and correct
+2. No material facts have been concealed
+3. I/We have not been declared defaulter by any bank/financial institution
+4. I/We have not been convicted in any criminal case
+5. I/We understand the terms and conditions of the loan
+6. I/We authorize the bank to verify all information provided
+
+**Applicant Signature:** _________________ **Date:** _________
+
+**Co-Applicant Signature:** _________________ **Date:** _________
+
+---
+
+## OFFICE USE ONLY
+
+**Application Received Date:** _________________
+**Received By:** _________________
+**Application Number:** _________________
+**Initial Assessment:** _________________
+**Documents Status:** □ Complete □ Incomplete
+**Next Action:** _________________
+
+---
+
+**For queries and assistance:**
+- Bank Helpline: [Bank specific number]
+- MSME Helpline: 1800-180-6763
+- Email: [Bank specific email]
+
+*This is a template. Actual forms may vary by lender. Always use the specific form provided by your chosen lender.*

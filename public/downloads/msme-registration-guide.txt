@@ -1,0 +1,91 @@
+# MSME Registration Guide - Complete Step-by-Step Process
+
+## What is Udyam Registration?
+
+Udyam Registration is the government registration process for Micro, Small, and Medium Enterprises (MSMEs) in India. This registration provides various benefits and is mandatory for availing government schemes.
+
+## Eligibility Criteria
+
+### Micro Enterprise
+- Manufacturing: Investment up to ₹1 crore and turnover up to ₹5 crores
+- Service: Investment up to ₹1 crore and turnover up to ₹5 crores
+
+### Small Enterprise  
+- Manufacturing: Investment up to ₹10 crores and turnover up to ₹50 crores
+- Service: Investment up to ₹10 crores and turnover up to ₹50 crores
+
+### Medium Enterprise
+- Manufacturing: Investment up to ₹50 crores and turnover up to ₹250 crores
+- Service: Investment up to ₹50 crores and turnover up to ₹250 crores
+
+## Required Documents
+
+1. **Aadhaar Card** - Primary requirement
+2. **PAN Card** - For business entity
+3. **Business Registration Certificate** (if applicable)
+4. **Bank Statement** - For turnover verification
+5. **GST Registration** (if applicable)
+6. **Import Export Code** (for export businesses)
+
+## Step-by-Step Registration Process
+
+### Step 1: Access the Portal
+- Visit: https://udyamregistration.gov.in/
+- Click on "Register New MSME"
+
+### Step 2: Enter Basic Details
+- Enter Aadhaar number
+- Verify OTP sent to registered mobile
+- Enter business details
+
+### Step 3: Business Information
+- Select business activity
+- Enter investment details
+- Provide turnover information
+- Add employment details
+
+### Step 4: Upload Documents
+- Upload required documents
+- Ensure all documents are clear and valid
+
+### Step 5: Verification & Submission
+- Review all information
+- Submit the application
+- Download acknowledgment receipt
+
+## Benefits of Registration
+
+1. **Financial Benefits**
+   - Access to collateral-free loans
+   - Lower interest rates
+   - Credit guarantee schemes
+
+2. **Government Schemes**
+   - Technology upgradation schemes
+   - Export promotion schemes
+   - Skill development programs
+
+3. **Tax Benefits**
+   - Exemption from certain taxes
+   - Reduced documentation requirements
+
+4. **Market Access**
+   - Government procurement opportunities
+   - Tender participation benefits
+
+## Important Tips
+
+- Keep all documents ready before starting
+- Ensure Aadhaar is linked to mobile number
+- Double-check all entered information
+- Save the registration certificate for future use
+
+## Contact for Support
+
+- Helpline: 1800-180-6763
+- Email: helpdesk-udyam@gov.in
+- Working Hours: 9:00 AM to 6:00 PM (Monday to Friday)
+
+---
+
+*This guide is for informational purposes. Always refer to the official website for the latest updates and requirements.*

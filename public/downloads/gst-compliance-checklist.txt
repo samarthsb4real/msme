@@ -1,0 +1,134 @@
+# GST Compliance Checklist for MSMEs
+
+## Registration Requirements
+
+### When is GST Registration Mandatory?
+□ Annual turnover exceeds ₹40 lakhs (₹20 lakhs for special states)
+□ Inter-state supply of goods/services
+□ Online selling through e-commerce platforms
+□ Casual taxable person
+□ Non-resident taxable person
+
+### Optional Registration
+□ Annual turnover between ₹20-40 lakhs (can opt for voluntary registration)
+□ Composition scheme eligibility (turnover up to ₹1.5 crores)
+
+## Required Documents for GST Registration
+
+□ PAN Card
+□ Aadhaar Card
+□ Proof of business registration/incorporation
+□ Proof of business address
+□ Bank account statement/cancelled cheque
+□ Authorization letter (if filed by CA/representative)
+□ Digital signature or e-sign facility
+
+## Monthly Compliance Requirements
+
+### For Regular Taxpayers
+□ File GSTR-1 (Sales return) by 11th of next month
+□ File GSTR-3B (Summary return) by 20th of next month
+□ Pay GST liability by 20th of next month
+□ Reconcile input tax credit
+
+### For Composition Dealers
+□ File GSTR-4 (Quarterly return)
+□ Pay GST quarterly
+□ Maintain simplified records
+
+## Annual Compliance
+
+□ File GSTR-9 (Annual return) by December 31st
+□ File GSTR-9C (Audit report) if turnover > ₹2 crores
+□ Conduct annual audit if required
+
+## Record Keeping Requirements
+
+### Tax Invoices
+□ Maintain proper tax invoices for all sales
+□ Include all mandatory fields in invoices
+□ Sequential numbering of invoices
+□ Digital signatures where applicable
+
+### Input Documents
+□ Maintain all purchase invoices
+□ Keep delivery challans
+□ Store import documents
+□ Keep expense receipts
+
+### Books of Accounts
+□ Maintain books of accounts as per GST rules
+□ Keep records for 72 months from due date of annual return
+□ Digital backup of all records
+
+## Input Tax Credit (ITC) Compliance
+
+□ Claim ITC only on eligible supplies
+□ Ensure supplier has paid GST to government
+□ Reconcile ITC with supplier's outward supplies
+□ Reverse ITC on supplies used for non-business purposes
+
+## Common Compliance Pitfalls to Avoid
+
+□ Late filing of returns (attracts penalty)
+□ Incorrect invoice formats
+□ Claiming ineligible ITC
+□ Not paying GST on time
+□ Poor record maintenance
+□ Not reconciling ITC regularly
+
+## E-way Bill Requirements
+
+□ Generate e-way bill for goods transport > ₹50,000
+□ Update Part-B for goods transport
+□ Ensure validity period compliance
+□ Cancel e-way bill if goods not transported
+
+## Special Provisions for MSMEs
+
+□ Quarterly return filing option (if turnover < ₹5 crores)
+□ Composition scheme benefits
+□ Reduced compliance burden
+□ Extended time limits for certain provisions
+
+## Penalty Structure (to be aware of)
+
+- Late return filing: ₹200 per day (₹100 per return for NIL returns)
+- Late payment of tax: 18% per annum interest
+- Not maintaining proper records: ₹25,000
+- Not issuing proper invoices: ₹10,000
+
+## Important Dates to Remember
+
+### Monthly (for regular taxpayers)
+- 10th: Last date for auto-drafting GSTR-2B
+- 11th: GSTR-1 filing due date
+- 20th: GSTR-3B filing and payment due date
+
+### Quarterly (for composition dealers)
+- 18th of month following quarter end: GSTR-4 due date
+
+### Annual
+- December 31st: GSTR-9 due date
+- January 31st: GSTR-9C due date (if applicable)
+
+## Useful Online Resources
+
+□ GST Portal: www.gst.gov.in
+□ GST Helpline: 1800-11-4885
+□ E-way Bill Portal: www.ewaybillgst.gov.in
+□ GST Rates Finder: www.cbic.gov.in
+
+## Professional Help
+
+Consider hiring:
+□ Chartered Accountant for complex cases
+□ GST Practitioner for regular compliance
+□ Tax consultant for advisory services
+
+---
+
+*This checklist is for guidance only. Consult with a tax professional for specific situations.*
+
+**Last Updated:** November 2025
+**Version:** 2.1
