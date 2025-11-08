@@ -4,31 +4,49 @@ import { NextRequest, NextResponse } from 'next/server';
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
-const MSME_CONTEXT = `You are a highly knowledgeable MSME (Micro, Small, and Medium Enterprise) Service Expert for India. You have comprehensive expertise in:
+const MSME_CONTEXT = `You are an MSME (Micro, Small, and Medium Enterprise) information expert for India. Answer user questions directly with factual data.
 
-1. MSME Registration & Udyam Registration processes
-2. Government Schemes & Subsidies (current and applicable)
-3. Loan Programs (MUDRA, Stand-Up India, SIDBI, etc.)
-4. Compliance Requirements and regulatory frameworks
-5. GST for MSMEs and tax optimization
-6. Export/Import procedures and documentation
-7. Technology upgradation schemes and benefits
-8. Market development assistance programs
-9. Skill development and capacity building programs
-10. Financial assistance and credit guarantee schemes
+Your responses must be:
+- Direct and to-the-point: Answer the exact question asked
+- Factual: Provide specific numbers, names, amounts, percentages, and deadlines
+- Contextual: Stick to what the user asked—no tangents or excessive tutorials
+- Concise: Avoid lengthy explanations unless specifically requested
+- Cite sources: Reference official portals (msme.gov.in, udyamregistration.gov.in, data.gov.in, etc.) when relevant
 
-Communication Style:
-- Provide clear, knowledgeable guidance based on current MSME policies
-- Give practical answers with specific numbers, percentages, and limits where applicable
-- Reference official government portals and authoritative sources
-- Be helpful and actionable in your recommendations
-- Structure information clearly with bullet points and sections
-- When discussing processes, provide step-by-step guidance
-- For current rates, fees, or deadlines that may change, advise users to verify with official sources
-- Focus on the Indian MSME ecosystem and current regulations
-- Be professional and supportive while maintaining accuracy
+What to include:
+- Specific program names, amounts, eligibility criteria
+- Official website URLs and contact information
+- Current policies and regulations (with dates/versions if known)
+- Clear yes/no answers or direct data points
 
-Deliver well-structured, practical responses that help users take concrete next steps.`;
+What to avoid:
+- Long step-by-step tutorials unless the user explicitly asks "how to" or "steps"
+- Generic motivational language or filler text
+- Repeating the question back to the user
+- Explaining basic concepts the user didn't ask about
+
+CRITICAL: Never mention your AI nature, training data, or that you are a language model. Never say phrases like "I don't have access to real-time data" or "as an AI" or "my knowledge cutoff." Present information authoritatively as an expert would. Only cite official government sources (msme.gov.in, data.gov.in, dashboard.msme.gov.in, etc.) when referencing data—never mention where your knowledge comes from otherwise.
+
+If a question is ambiguous, provide the most likely answer based on context, then briefly note alternatives (1-2 sentences max).
+
+Your expertise covers: Udyam registration, MUDRA/Stand-Up India/CGTMSE loans, GST compliance, government schemes/subsidies, export/import procedures, technology upgradation, and state-specific MSME programs.`;
+
+const MAHARASHTRA_RESOURCES = `When answering Maharashtra-specific queries, prioritize factual data from these authoritative sources. Cite the source name and provide specific data points (numbers, names, locations) from these links:
+
+1. Data.gov.in — List of MSME Registered Units under UDYAM: https://www.data.gov.in/resource/list-msme-registered-units-under-udyam
+2. dashboard.msme.gov.in — Statewise Udyam Registration dashboard: https://dashboard.msme.gov.in/Udyam_Statewise.aspx
+3. S3WaaS (Economic Survey PDF) — Economic Survey of Maharashtra 2024-25: https://cdnbbsr.s3waas.gov.in/s349d4b2faeb4b7b9e745775793141e2/uploads/2025/01/2025030788773769.pdf
+4. Data.gov.in (MSME Catalogs) — Ministry datasets: https://www.data.gov.in/catalogs/?ministry=Ministry+of+Micro%2C+Small+and+Medium+Enterprises
+5. DCMSME — Data & Statistics: https://dcmsme.gov.in/Data_Statistics.aspx
+6. PCMC (Pimpri-Chinchwad Municipal Corporation) — department data/downloads: https://www.pcmcindia.gov.in/department-data.php?Id=13
+7. Aaple Sarkar (Maharashtra government portal): https://www.aaplesarkar.mahaonline.gov.in/en
+8. MSME DataBank — https://www.msmedatabank.in/
+
+Instructions for Maharashtra queries:
+- Answer with specific data: registration counts, district-wise statistics, MIDC locations, cluster names
+- Reference the source explicitly (e.g., "According to dashboard.msme.gov.in, Maharashtra has X registrations as of...")
+- If the user asks for municipal/district-level data, provide what's available and note if direct CSV/JSON links exist
+- Keep answers factual and data-driven; avoid generic advice unless the user explicitly asks for recommendations`;
 
 export async function POST(request: NextRequest) {
   let message = '';
@@ -39,22 +57,10 @@ export async function POST(request: NextRequest) {
     message = body.message;
     selectedCategory = body.model || 'auto';
 
-    // If Maharashtra dataset is requested, redirect to local-chat API
-    if (selectedCategory === 'maharashtra') {
-      console.log('🏙️ Routing to Maharashtra dataset (local model):', message);
-      
-      const localResponse = await fetch(`${request.nextUrl.origin}/api/local-chat`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ message, category: selectedCategory }),
-      });
-      
-      const localData = await localResponse.json();
-      console.log('📍 Maharashtra dataset response received');
-      return NextResponse.json(localData);
-    }
+    // If Maharashtra dataset is requested, include Maharashtra-specific authoritative links
+    // in the context so Gemini can use them as reference sources when answering.
+    // (We no longer auto-redirect to the local-chat API here; use 'local-chat' explicitly if
+    // you want the local model.)
 
     if (!message) {
       return NextResponse.json(
@@ -79,16 +85,21 @@ export async function POST(request: NextRequest) {
     let categoryContext = MSME_CONTEXT;
     switch (selectedCategory) {
       case 'registration':
-        categoryContext += '\n\nFocus specifically on business registration, Udyam registration, company incorporation, licenses, and setup procedures.';
+        categoryContext += '\n\nFocus: Udyam registration, business setup, licenses. Provide specific portal links, fees, timelines, required documents.';
         break;
       case 'loans':
-        categoryContext += '\n\nFocus specifically on loans, financing, MUDRA schemes, bank processes, credit facilities, and funding options.';
+        categoryContext += '\n\nFocus: Loans and financing. Provide exact amounts, eligibility criteria, interest rates, bank names, application portals.';
         break;
       case 'compliance':
-        categoryContext += '\n\nFocus specifically on compliance requirements, GST, tax obligations, labor laws, and regulatory matters.';
+        categoryContext += '\n\nFocus: GST, tax, labor laws, regulations. Provide thresholds, exemptions, filing deadlines, penalty amounts.';
         break;
       case 'schemes':
-        categoryContext += '\n\nFocus specifically on government schemes, subsidies, incentives, grants, and benefit programs.';
+        categoryContext += '\n\nFocus: Government schemes, subsidies, grants. Provide scheme names, subsidy percentages/amounts, eligibility, application deadlines.';
+        break;
+      case 'maharashtra':
+        // Append Maharashtra resources and an instruction to cite them where applicable.
+        categoryContext += '\n\nFocus: Maharashtra state MSME data, policy, and local resources. Provide district-level statistics, MIDC locations, cluster names, registration counts.';
+        categoryContext += '\n\n' + MAHARASHTRA_RESOURCES;
         break;
       default:
         // Auto mode - general context
@@ -99,7 +110,7 @@ export async function POST(request: NextRequest) {
 
 User Question: ${message}
 
-Please provide a helpful response:`;
+Provide a direct, factual answer. Be concise and cite sources where applicable.`;
 
     const result = await model.generateContent(prompt);
     const response = await result.response;
@@ -110,13 +121,13 @@ Please provide a helpful response:`;
   } catch (error) {
     console.error('Gemini API error:', error);
     
-    // Category-specific guidance
+    // Category-specific guidance (no emojis so responses are plain text)
     const fallbackResponses: Record<string, string> = {
-      registration: '**Registration & Setup Help** 🏢\n\n• **Udyam Registration**: Visit udyamregistration.gov.in with your Aadhaar number and basic business details. The registration is free and typically takes 10-15 minutes online.\n\n• **Key Benefits**: Access to collateral-free loans up to ₹2 crores, government tenders, and various subsidy schemes.',
-      loans: '**Loans & Finance Help** 💰\n\n• **MUDRA Loans**: Financing up to ₹10 lakhs without collateral\n• **Stand-Up India**: ₹10 lakhs to ₹1 crore for SC/ST/Women entrepreneurs\n• **CGTMSE**: Credit guarantee up to ₹2 crores\n\n**Next Step**: Visit your nearest bank with Udyam certificate to explore options.',
-      compliance: '**Compliance & Tax Help** 📋\n\n• **GST Exemption**: Businesses under ₹40 lakhs turnover are exempt\n• **Composition Scheme**: 1-6% tax rate for turnover up to ₹1.5 crores\n• **MSME Benefits**: Reduced compliance requirements under various labor and environmental laws.',
-      schemes: '**Schemes & Subsidies Help** 🎯\n\n• **Technology Upgradation**: Up to 15% subsidy (max ₹15 lakhs) on machinery\n• **Export Promotion**: Market development assistance and trade fair support\n• **Cluster Development**: SFURTI scheme funding available\n\n**Next Step**: Check respective ministry portals for current application procedures.',
-      auto: '**MSME Service Assistant** 🤖\n\nI can help with MSME registration, financing, compliance, and government schemes. Select a specific category above for focused assistance, or ask me about any MSME-related topic.'
+      registration: '**Registration & Setup Help**\n\n• **Udyam Registration**: Visit udyamregistration.gov.in with your Aadhaar number and basic business details. The registration is free and typically takes 10-15 minutes online.\n\n• **Key Benefits**: Access to collateral-free loans up to ₹2 crores, government tenders, and various subsidy schemes.',
+      loans: '**Loans & Finance Help**\n\n• **MUDRA Loans**: Financing up to ₹10 lakhs without collateral\n• **Stand-Up India**: ₹10 lakhs to ₹1 crore for SC/ST/Women entrepreneurs\n• **CGTMSE**: Credit guarantee up to ₹2 crores\n\n**Next Step**: Visit your nearest bank with Udyam certificate to explore options.',
+      compliance: '**Compliance & Tax Help**\n\n• **GST Exemption**: Businesses under ₹40 lakhs turnover are exempt\n• **Composition Scheme**: 1-6% tax rate for turnover up to ₹1.5 crores\n• **MSME Benefits**: Reduced compliance requirements under various labor and environmental laws.',
+      schemes: '**Schemes & Subsidies Help**\n\n• **Technology Upgradation**: Up to 15% subsidy (max ₹15 lakhs) on machinery\n• **Export Promotion**: Market development assistance and trade fair support\n• **Cluster Development**: SFURTI scheme funding available\n\n**Next Step**: Check respective ministry portals for current application procedures.',
+      auto: '**MSME Service Assistant**\n\nI can help with MSME registration, financing, compliance, and government schemes. Select a specific category above for focused assistance, or ask me about any MSME-related topic.'
     };
 
     const userMessage = message?.toLowerCase() || '';

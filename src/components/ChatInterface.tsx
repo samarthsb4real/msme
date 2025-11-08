@@ -214,6 +214,17 @@ export default function ChatInterface() {
     'Government subsidies'
   ];
 
+  // Deterministic time formatter to avoid SSR/client hydration mismatches
+  const formatTime = (dateLike: Date | string | number) => {
+    const d = typeof dateLike === 'string' || typeof dateLike === 'number' ? new Date(dateLike) : dateLike;
+    if (!(d instanceof Date) || isNaN(d.getTime())) return '';
+    const hours = d.getHours();
+    const minutes = d.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const hr12 = hours % 12 === 0 ? 12 : hours % 12;
+    return `${hr12}:${minutes.toString().padStart(2, '0')} ${ampm}`;
+  };
+
   return (
     <Card className="max-w-4xl mx-auto overflow-hidden">
       {/* Chat Header */}
@@ -368,7 +379,7 @@ export default function ChatInterface() {
                   <p className={`text-xs mt-1 ${
                     message.isUser ? 'text-primary-foreground/70' : 'text-muted-foreground'
                   }`}>
-                    {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    {formatTime(message.timestamp)}
                   </p>
                 </div>
               </div>

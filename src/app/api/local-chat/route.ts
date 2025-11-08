@@ -19,7 +19,7 @@ You speak with confidence about Maharashtra's business environment, providing sp
 
 // Maharashtra-specific dataset responses
 const localModelResponses: Record<string, string> = {
-  'registration': `# MSME Registration Guide 🏢
+  'registration': `# MSME Registration Guide
 
 **Udyam Registration** is mandatory for all MSMEs in India:
 
@@ -38,14 +38,14 @@ const localModelResponses: Record<string, string> = {
 - Business address proof
 
 ## Benefits:
-✅ Access to government schemes
-✅ Collateral-free loans up to ₹2 crores
-✅ Protection against delayed payments
-✅ Tax benefits and subsidies
+- Access to government schemes
+- Collateral-free loans up to ₹2 crores
+- Protection against delayed payments
+- Tax benefits and subsidies
 
 **Registration is FREE** - beware of paid services!`,
 
-  'loan': `# MSME Loan Options 💰
+  'loan': `# MSME Loan Options
 
 ## Popular Loan Schemes:
 
@@ -73,7 +73,7 @@ const localModelResponses: Record<string, string> = {
 
 **Tip**: Compare interest rates across banks!`,
 
-  'gst': `# GST for MSMEs 📊
+  'gst': `# GST for MSMEs
 
 ## Registration Thresholds:
 - **₹20 lakhs**: For goods (₹10 lakhs for special states)
@@ -100,7 +100,7 @@ const localModelResponses: Record<string, string> = {
 
 **Late Fee Waiver**: Often available for small taxpayers`,
 
-  'subsidy': `# Government Subsidies for MSMEs 🎯
+  'subsidy': `# Government Subsidies for MSMEs
 
 ## Technology Upgradation Schemes:
 
@@ -129,7 +129,7 @@ Each state offers additional subsidies:
 
 **Apply Early**: Most schemes have limited budgets!`,
 
-  'compliance': `# MSME Compliance Benefits 📋
+  'compliance': `# MSME Compliance Benefits
 
 ## Labor Law Exemptions:
 
@@ -170,7 +170,7 @@ export async function POST(request: NextRequest) {
     message = body.message;
     category = body.category || 'maharashtra';
 
-    console.log('🤖 Local model processing:', { message, category });
+  console.log('Local model processing:', { message, category });
 
     if (!message) {
       return NextResponse.json(
@@ -188,7 +188,7 @@ export async function POST(request: NextRequest) {
 
     // Location-based queries
     if (lowerMessage.includes('akola')) {
-      response = `# Akola Business Ecosystem 🏙️
+  response = `# Akola Business Ecosystem
 
 **Akola** is a prominent business hub in Maharashtra's Vidarbha region:
 
@@ -200,11 +200,11 @@ export async function POST(request: NextRequest) {
 - **Handicrafts**: Traditional crafts and handloom
 
 ## Business Opportunities:
-✅ **Agro-processing**: Cotton ginning, oil extraction
-✅ **Export Business**: Cotton, pulses to international markets  
-✅ **Logistics Hub**: Strategic location for transportation
-✅ **Food Products**: Spices, dal processing units
-✅ **Textile Manufacturing**: Spinning, weaving units
+- **Agro-processing**: Cotton ginning, oil extraction
+- **Export Business**: Cotton, pulses to international markets  
+- **Logistics Hub**: Strategic location for transportation
+- **Food Products**: Spices, dal processing units
+- **Textile Manufacturing**: Spinning, weaving units
 
 ## Government Support:
 - **District Industries Centre (DIC)** - Akola
@@ -219,7 +219,7 @@ export async function POST(request: NextRequest) {
 **Contact**: DIC Akola - 0724-2422588`;
 
     } else if (lowerMessage.includes('borde gruha udyog')) {
-      response = `# BORDE GRUHA UDYOG - MSME Enterprise Analysis 🏭
+  response = `# BORDE GRUHA UDYOG - MSME Enterprise Analysis
 
 **BORDE GRUHA UDYOG** is a home-based enterprise (Gruha Udyog = Home Industry):
 
@@ -230,11 +230,11 @@ export async function POST(request: NextRequest) {
 - **Investment**: Limited capital requirement
 
 ## Common Gruha Udyog Activities:
-✅ **Food Processing**: Pickles, snacks, sweets
-✅ **Textiles**: Handloom, embroidery, tailoring
-✅ **Handicrafts**: Traditional crafts, decorative items
-✅ **Agro-products**: Spice grinding, flour mills
-✅ **Services**: Catering, beauty services
+- **Food Processing**: Pickles, snacks, sweets
+- **Textiles**: Handloom, embroidery, tailoring
+- **Handicrafts**: Traditional crafts, decorative items
+- **Agro-products**: Spice grinding, flour mills
+- **Services**: Catering, beauty services
 
 ## MSME Benefits Available:
 - **Udyam Registration**: Free online registration
@@ -251,7 +251,7 @@ export async function POST(request: NextRequest) {
 *Ask me specific questions about Maharashtra's business landscape, and I'll provide detailed, actionable guidance.*
 
 ---
-*🤖 Response from Maharashtra Dataset (Local Model)*`;
+*Response from Maharashtra Dataset (Local Model)*`;
 
     // Regular keyword matching
     } else if (lowerMessage.includes('registration') || lowerMessage.includes('udyam')) {
@@ -267,7 +267,7 @@ export async function POST(request: NextRequest) {
     
     // Business location queries
     } else if (lowerMessage.includes('business') && (lowerMessage.includes('location') || lowerMessage.includes('where') || lowerMessage.includes('area'))) {
-      response = `# Best Business Locations for MSMEs in India 📍
+  response = `# Best Business Locations for MSMEs in India
 
 ## Factors to Consider:
 1. **Raw Material Availability**
@@ -308,18 +308,18 @@ export async function POST(request: NextRequest) {
     } else {
       // Intelligent general response based on context
       if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('help')) {
-        response = `# Welcome to Maharashtra Dataset Assistant 👋
+  response = `# Welcome to Maharashtra Dataset Assistant
 
 I am your Maharashtra Business Intelligence Expert with comprehensive insights into the state's industrial ecosystem.
 
-## 🎯 I specialize in:
+## I specialize in:
 - **Business Registration** (Udyam, Company incorporation)
 - **Financial Assistance** (Loans, schemes, subsidies)  
 - **Tax & Compliance** (GST, labor laws, licenses)
 - **Location Intelligence** (Industrial areas, clusters)
 - **Growth Strategies** (Technology, markets, skills)
 
-## 🔥 Try asking me:
+## Try asking me:
 - "How to register MSME in Maharashtra?"
 - "MUDRA loan eligibility criteria"
 - "GST benefits for small businesses"
@@ -331,7 +331,7 @@ I am your Maharashtra Business Intelligence Expert with comprehensive insights i
 *Ready to help with your MSME journey!*`;
 
       } else if (lowerMessage.includes('thank')) {
-        response = `# You're Welcome! 🙏
+        response = `# You're Welcome!
 
 Happy to help with your MSME queries! 
 
@@ -345,15 +345,15 @@ Happy to help with your MSME queries!
 - udyamregistration.gov.in
 - Your local District Industries Centre
 
-*Keep growing your business!* 🚀`;
+*Keep growing your business!*`;
 
       } else {
-        // Enhanced contextual response
-        response = `# MSME Assistant (Local Model) 🤖
+  // Enhanced contextual response
+  response = `# MSME Assistant (Local Model)
 
 I'm analyzing your query: **"${message}"**
 
-## 🧠 Based on your question, you might be interested in:
+## Based on your question, you might be interested in:
 
 ${lowerMessage.includes('business') ? '- **Business Setup**: Registration, licenses, location selection' : ''}
 ${lowerMessage.includes('money') || lowerMessage.includes('finance') ? '- **Financing**: MUDRA loans, venture capital, government schemes' : ''}
@@ -361,12 +361,12 @@ ${lowerMessage.includes('tax') ? '- **Taxation**: GST registration, composition 
 ${lowerMessage.includes('export') || lowerMessage.includes('international') ? '- **Export Business**: Documentation, incentives, market access' : ''}
 ${lowerMessage.includes('technology') || lowerMessage.includes('digital') ? '- **Technology**: Digitization, Industry 4.0, automation subsidies' : ''}
 
-## 💡 **Quick Actions:**
+## Quick Actions:
 1. **Ask specifically** about registration, loans, GST, subsidies, or compliance
 2. **Mention your location** for targeted advice (e.g., "Mumbai textile business")
 3. **Try other categories** (dropdown above) for general assistance
 
-## 🎯 **Popular Queries:**
+## Popular Queries:
 - "How to start MSME in [your city]?"
 - "MUDRA loan process step by step"
 - "GST registration for small business"
@@ -376,14 +376,14 @@ ${lowerMessage.includes('technology') || lowerMessage.includes('digital') ? '- *
       }
     }
 
-    console.log('✅ Local model response generated, length:', response.length);
+  console.log('Local model response generated, length:', response.length);
     return NextResponse.json({ response });
 
   } catch (error) {
     console.error('Local model error:', error);
     
-    // Fallback response for Maharashtra dataset
-    const fallbackResponse = `# Maharashtra Dataset Service 🔧
+  // Fallback response for Maharashtra dataset (no emojis)
+  const fallbackResponse = `# Maharashtra Dataset Service
 
 I'm the **Maharashtra Dataset Assistant**, but I'm experiencing some technical difficulties right now.
 
@@ -400,7 +400,7 @@ For immediate assistance, please:
 2. Visit official MSME Ministry website
 3. Contact your nearest District Industries Centre
 
-*Maharashtra dataset service will be back online soon!*`;
+Maharashtra dataset service will be back online soon.`;
 
     return NextResponse.json({ 
       response: fallbackResponse,

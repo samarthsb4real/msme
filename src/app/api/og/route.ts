@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
         <text x="640" y="320" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle" font-weight="bold">${title}</text>
         <text x="640" y="400" font-family="Arial, sans-serif" font-size="24" fill="#e2e8f0" text-anchor="middle">Comprehensive MSME service assistant for Indian entrepreneurs</text>
         <circle cx="640" cy="500" r="40" fill="white" opacity="0.1"/>
-        <text x="640" y="510" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle">🏢</text>
+  <text x="640" y="510" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle">MSME</text>
       </svg>
     `
 
